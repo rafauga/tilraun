@@ -1,23 +1,19 @@
-# Hello bookdown 
+# Þetta er tilraun  
 
-All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (`#`) per .Rmd file.
+Hér er bók í vinnslu.
 
-## A section
+## Undirkafli 
 
-All chapter sections start with a second-level (`##`) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.
-## Display Math
-The quadratic formula:
-$$
-x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
-$$
+Fyrsti undirkafli
+
+Tilraun með að sýna og keyra R kóða 
 ```{r, echo=TRUE}
 set.seed(123)
 x <- rnorm(100, mean = 10, sd = 2)
 mean(x)
 ```
 
-<iframe src="https://editor.p5js.org/rafauga/full/KuX9osLVw"width="410px" height="450px"></iframe>
+Svo er tilraun með að greypa p5.js síðu annars staðar frá.
 
-### An unnumbered section {-}
+<iframe src="https://editor.p5js.org/rafauga/full/zn_Nz0VLw"width="610px" height="650px"></iframe>
 
-Chapters and sections are numbered by default. To un-number a heading, add a `{.unnumbered}` or the shorter `{-}` at the end of the heading, like in this section.
