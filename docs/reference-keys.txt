@@ -2,9 +2,9 @@ fig:nice-fig
 tab:nice-tab
 eq:binom
 thm:tri
-um
+um-þetta-skjal
 undirkafli-hér
-preview-book
+annar-undirkafli
 þetta-er-tilraun
 undirkafli
 cross
