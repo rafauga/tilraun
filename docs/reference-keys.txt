@@ -6,7 +6,7 @@ about
 usage
 render-book
 preview-book
-tetta-er-tilraun
+þetta-er-tilraun
 undirkafli
 cross
 chapters-and-sub-chapters
