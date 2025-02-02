@@ -15,19 +15,11 @@ link-citations: yes
 github-repo: rstudio/bookdown-demo
 ---
 
-# About
+# Um 
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
+Þetta er prófun á kerfinu til að gera bækur.
 
-## Usage 
-
-Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
-
-Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`.
-
-The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
-
-## Render book
+## Undirkafli hér 
 
 You can render the HTML version of this example book without changing anything:
 
