@@ -17,7 +17,7 @@ github-repo: rstudio/bookdown-demo
 
 # Um þetta skjal
 
-Þetta er prófun á kerfinu til að gera bækur.
+Þetta er prófun á kerfinu til að gera bækur. Með knitr og Git.
 
 ## Undirkafli hér 
 
