@@ -1,0 +1,528 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{book}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Hagnýtt stærðfræði í námi og kennslu},
+  pdfauthor={Ingólfur Gíslason},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Hagnýtt stærðfræði í námi og kennslu}
+\author{Ingólfur Gíslason}
+\date{2025-11-25}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{conjecture}{Conjecture}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\chapter{Um textann}\label{umtextann}
+
+Þessi texti er um stærðfræðileg líkön, framsetningu gagna og ályktanir sem hægt er að draga af gögnunum, en auk þess er hún um kennslu þar sem þetta eru viðfangsefnin. Hún er hugsuð sem kennsluefni í námskeiðinu Hagnýtt stærðfræði í námi og kennslu sem er fyrir stærðfræðikennaranema við Menntavísindasvið Háskóla Íslands. Hún gæti þó nýst nemendum í öðrum námskeiðum og jafnvel nemendum í framhaldsskólum.
+
+Í textanum er áherslan á undirstöðuhugmyndir en ekki á tæknilegar útfærslur. Þó eru mörg dæmi þar sem við notum tölfræðiforritið R og önnur forrit, en þau dæmi þjóna fyrst og fremst hugmyndunum. Hér er ekki fjallað um ýmsa þætti gagnavinnslu og gagnavísinda, svo sem umbreytingu hrágagna á þægilegri form eða fágaðar tölfræðiaðferðir. Ekki er gert ráð fyrir þekkingu á stærðfræðikenningum eins og stærðfræðigreiningu eða línulegri algebru og þær eru ekki kynntar hér.
+
+Form textans er fyrst og fremst sem röð verkefna. Mörg verkefni eru kenningarleg en önnur vísa til raunverulegra gagna og enn önnur beina athyglinni að kennslufræði. Gengið er út frá því að nemendur vinni bæði saman og með kennara sem hefur góða þekkingu á efninu, en áhugasamar manneskjur utan slíks samhengis gætu ef til vill nýtt sér textann líka. Verkefnum er raðað þannig að sum efni koma endurtekið fram, og stundum í nýju samhengi eða með aukinni dýpt.
+
+\section{Kennslufræðilegar forsendur}\label{kennslufruxe6uxf0ilegar-forsendur}
+
+Til þess að læra krefjandi fræði þarf nemandinn að brjóta heilann. Þess vegna er skipulag textans þannig að lesandi/nemandi ætti að glíma við verkefni áður en sett er fram einhver tiltekin aðferð til að leysa „verkefni af þeirri gerð``. Í mörgum hefðbundnum kennslubókum er aðferð fyrst sett fram, þá sýnidæmi, og loks koma dæmi fyrir nemendur til að leysa. Gallinn við það skipulag er að nemendur fá ekki tækifæri til að brjóta heilann um efnið sjálft til að byrja með og svo fá þeir ekki heldur tækifæri til að hugsa um það hvenær aðferðin á við og hvenær ekki (þeir vita að það á einmitt að nota þessa tilteknu aðferð við verkefnin sem fylgja beint á eftir). Það er hins vegar ekkert sem útilokar að kennari (eða texti) útskýri aðferðir eftir að nemandi hefur reynt sig við verkefni -- þó að vænlegast sé að það sé gert í samræðu og samstarfi nemenda og kennara.
+
+\section{Notkun bókar og tungumál}\label{notkun-buxf3kar-og-tungumuxe1l}
+
+Best er ef lesandi hefur aðgang að tölvu og geti keyrt R-skipanir. Þetta er hægt í flestum tölvum, í vafra, eða með því að hala niður R forritinu og/eða einhverjum framenda sem tengist R. Þar sem netið er síbreytilegt er líklega best að mæla einfaldlega með vef-leit að slíkri leið.
+
+Ég ávarpa lesanda textans ýmist sem nemanda (hann), lesanda (hann), en stundum nota ég „þau``, „öll``, og önnur orð til að gefa til kynna að öll eru velkomin að lesa og læra af þessum texta, og persónur í verkefnatextum geta verið af ólíku kyni.
+
+Bókina má aðlaga og nýta að vild, að hluta eða í heild, með eftirfarandi skilyrðum:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Bókin sé ekki nýtt til að valda manneskjum skaða, græða peninga, eða til að stuðla að auknum ójöfnuði milli fólks.
+\item
+  Ef umtalsverðir hlutar eru nýttir í öðru verki sé upprunans hér getið.
+\end{enumerate}
+
+\chapter{Um stærðfræðilíkön}\label{likon}
+
+Í þessum kafla er fjallað um stærðfræðilíkön, hlutverk þeirra í kennslu og líkanagerðarsjónarmið á stærðfræði. Litið verður á dæmi um einföld líkön og líkön í efni skólabóka.
+
+\section{Líkön: fyrsta skilgreining}\label{likan_skgr}
+
+Stærðfræðilegt líkan eða stærðfræðilíkan er (einfölduð) framsetning á einhverjum (hluta af) raunverulegum aðstæðum eða fyrirbærum, með stærðfræðilegum hugtökum og fullyrðingum. Líkanið inniheldur nauðsynlega (og af ásetningi) einungis upplýsingar um tilteknar hliðar á viðfangsefninu en ekki aðrar. Það fer eftir því hvert samhengið er hvað skiptir máli og hvað skiptir ekki máli (fyrir markmiðin í hvert skipti).
+Við notum stærðfræðilíkön til þess að \textbf{lýsa}, \textbf{útskýra} og \textbf{spá} fyrir um aðstæður, ferli og fyrirbæri. Auk þess eru stærðfræðilíkön í auknum mæli notuð til þess að stjórna eða móta veruleika okkar (til dæmis því hvað við sjáum á samfélagsmiðlum, borgum í skatta, og fleira og fleira).
+
+PISA-stofnunin leggur mikla áherslu á stærðfræðilíkön í sinni skilgreiningu á stærðfræðilæsi. Það má líta á stærðfræðilæsi sem hæfni í að búa til, vinna með og túlka stærðfræðilíkön. Hér er skýringarmynd úr íslenskri skýrslu um PISA frá 2015 (kafli eftir Freyju Hreinsdóttur).
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{images/PISA_model} 
+
+}
+
+\caption{Líkanahringurinn}\label{fig:unnamed-chunk-1}
+\end{figure}
+
+Takið eftir því að stærðfræðilíkanið sjálft er smíðað í fasanum \textbf{setja fram}. Því er svo beitt og hlutir reiknaðir út í fasanum beita. Þá er stærðfræðilega lausnin skoðuð og túlkuð yfir á upphaflega verkefnið: hvað segir stærðfræðilausnin um raunveruleikann? Að lokum þá er lagt mat á lausnina, og út frá því er stærðfræðilíkanið oft endurskoðað, og annar hringur hefst.
+
+Stærðfræðilíkanið er stundum safn af skrifuðum jöfnum, stundum teikningar af venslum hluta, stundum reiknirit í formi tölvuforrits, eða fleira en eitt af þessu eða á einhverju öðru formi af framsetningu á stærðfræðihugtökum.
+
+\subsection{Samtala}\label{samtala}
+
+Hugsum okkur að stjórnmálamaður segi eftirfarandi:
+
+Fjöldi atvinnulausra er 12000, en fjöldi fólks undir fátæktarmörkum er 7000. Samtals eru þetta 19000 manns.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  Er þetta örugglega satt? Ef þetta er ekki nauðsynlega satt -- hvað gæti verið satt í staðinn?
+\item
+  Greinið lausn ykkar út frá líkaninu \emph{Setja fram-Beita-Túlka-Meta}. Hvað gerið þið í hverjum fasa?
+\item
+  Útskýrið um hvað þetta verkefni er, burt séð frá raunverulega samhenginu. Er hægt að segja almennt um hvers konar „raunverulegar aðstæður`` er að ræða, og hvernig framsetningar varpa ljósi á þær? Hér má nota öll þau stærðfræðihugtök og rithátt sem þið þekkið.
+\end{enumerate}
+
+\subsection{Hópar}\label{hopar}
+
+Hugsum okkur tvö einkenni. Til að hafa eitthvað til að hugsa um skulum við taka þessi tvö einkenni fólks:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Að vera dökkhært
+\item
+  Að vera með brún augu
+\end{enumerate}
+
+Í því sem eftir af dæminu beinum við athygli okkar ekki að fjölda í hverjum hópi eða stærðum hópa, eingöngu það að segja hvaða hópar koma til greina. Hafið líka í huga að hér höfum við engan sérstakan áhuga á þessum tilteknu eiginleikum. Líkanið er ekki um neinn tiltekinn áþreifanlegan raunveruleika. Þið megið búa til hvaða tvö einkenni sem er, til að hugsa um, svo lengi sem sama manneskjan gæti mögulega haft bæði einkennin í einu, eða annað hvort, eða hvorugt. Hér er spurningin: hvaða ólíku afmörkuðu hópa er hægt að aðgreina á grundvelli þessara tveggja einkenna? Næsta spurning er: hvaða ólíku afmarkaða hópa væri hægt að aðgreina út frá þremur einkennum (er hægt að sýna hópana einhvern veginn?) og hve margir eru þeir? Hvað með fjögur, fimm eða sex einkenni, og svo framvegis?
+
+\section{Ólík markmið og áherslur í kennslu}\label{olikmarkmid}
+
+Í \href{https://adalnamskra.is/adalnamskra-grunnskola/kafli-25}{aðalnámskrá grunnskóla} segir í kaflanum \emph{Að geta spurt og svarað með stærðfræði} að við lok 10. bekkjar geti nemandi „sett upp, túlkað og gagnrýnt stærðfræðilegt líkan af raunverulegum aðstæðum. Það getur m.a. falið í sér reikning, teikningar, myndrit, jöfnur og föll.`` Þessu markmiði má svo skipta í tvennt: annars vegar að geta smíðað stærðfræðilíkan frá grunni, og hins vegar að geta notað tilteknar þekktar gerðir af stærðfræðilíkönum.
+Hægt er að greina að minnsta kosti þrenns konar áherslu í kennslu:
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  Að kenna nemendum að smíða stærðfræðilíkön frá grunni (áhersla á ferlið).
+\item
+  Að nota smíði stærðfræðilíkana til þess að kenna/læra stærðfræði (áhersla á stærðfræðihugtök).
+\item
+  Að kenna nemendum að nota tiltekin stærðfræðilíkön (áhersla á að nota þekkta stærðfræði) og/eða túlka þau.
+\end{enumerate}
+
+Hugmyndin með (a) er þá yfirleitt að raunverulegt samhengi skipti meginmáli, að það sé „raunverulega raunverulegt`` og tekið alvarlega, en þá er gert ráð fyrir að stærðfræðilega inntakið sem ætlast er til að nemendur noti sé þeim mjög vel tamt (og þeir hafi þekkt það í langan tíma, til dæmis 2 ár). Hugmyndin í (b) er að stærðfræðin hafi forgang en það skipti ekki öllu máli að verkefnið sé algerlega raunverulegt, það skipti ekki öllu máli að taka allar flækjur sem fylgja raunveruleikanum inn í myndina. Tilgangurinn sé að byggja upp þekkingu og skilning á stærðfræði. Með (c) er kannski farið næst því sem hefðbundið er: nemendum er kennt að nota tilteknar vel skilgreindar gerðir af stærðfræðilíkönum sem þeir æfa sig að nota. Að sjálfsögðu er ekki útilokað að samþætta markmiðið og fara einhverskonar millileið.
+
+\textbf{Spurningar}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  Ef við lítum til baka á verkefnið \hyperref[samtala]{Samtala}: Væri hægt að nota það til að ná markmiðum a, b, og/ eða c? Hér er mikilvægt að velta fyrir sér hvaða stærðfræðihugtök væri um að ræða og fyrir hvaða nemendahópur (hvað veit hann fyrirfram?).
+\item
+  Verkefnið \hyperref[hopar]{Hópar} er augljóslega ekki um að smíða stærðfræðilíkan af raunverulegum aðstæðum -- markmið þess er ekki beinlínis hagnýtt fyrir nemendur í grunn- og framhaldsskólum. En hvaða gildi gæti verkefnið haft fyrir stærðfræðinám?
+\end{enumerate}
+
+\section{Ferlið - áhersla (a)}\label{nam_ferlid}
+
+Ef áherslan er á að kenna nemendum \textbf{ferlið} að búa til stærðfræðilíkan er mikilvægt að verkefnið sé mjög „raunverulegt`` (fyrir nemendum). Þeir ættu sjálfir að finna út hvaða upplýsinga þarf að afla og gera það. Að sjálfsögðu má veita stuðning, til dæmis með því að beina nemendum að áreiðanlegum upplýsingaveitum, en upplýsingarnar ættu ekki að vera á tilbúnu „stærðfræðiformi``. Það er hins vegar ekki hægt að ætlast til þess að nemendur noti stærðfræðihugtök sem þeir hafa ekki náð góðum tökum á, vegna þess að verkefnið sjálft og allt ferlið er nógu flókið. Mikil áhersla er þá á að setja skýrt fram allar forsendur, reikniaðferðir, túlkun á niðurstöðum og mat á því hve nákvæmt líkanið er. Og ef unnið er á þennan hátt þarf að gefa góðan tíma. Það sem stærðfræðikennari verður að vega og meta hér er hvort tíminn sem fer í „annað en stærðfræði`` sé þess virði.
+Vinsæl dæmi um verkefni af þessu tagi gætu verið að skipuleggja veislu, hópferðalag eða að spara fyrir einhverju, en það gerist stundum að stærðfræðin sjálf verður að nánast engu eða er allt of einföld. Ef það þarf enga stærðfræði umfram samlagningu og frádrátt á verkefnið varla heima í námsefni efri bekkja grunnskóla til dæmis.
+
+\section{Stærðfræðinám gegnum líkanagerð - áhersla (b)}\label{nam_likanagerd}
+
+Ef áherslan er á að nemendur læri stærðfræðihugtök má draga úr áherslunni á að verkefnið sé áþreifanlegt og aðkallandi, og það má hugsa sér að gefa nemendum allar nauðsynlegar upplýsingar. Verkefnið þarf auðvitað að vera raunverulegt fyrir nemendum en það má sleppa því að hugsa um allar flækjur og má jafnvel hugsa sér „þrautir`` og hálf-stærðfræðileg samhengi, það er að segja, það er hægt að gefa nemendum (einfaldaðar) upplýsingar, hugsanlega að hluta á stærðfræðilegu formi sem þeim er vel tamt. Tilgangurinn hér er í raun að nemendur verði meðvitaðir um einhver stærðfræðileg tengsl sem þeir hafa ekki áður áttað sig á með því að leysa verkefnið, og þetta eru verkefnin sem henta í RME-nálgun (sjá síðar) á stærðfræði þar sem nemendur enduruppgötva stærðfræðina. Verkefnin eru hönnuð til þess að nemendur „neyðist`` til þess að átta sig á þessum tengslum. Svo kennarinn verður að vita fyrirfram að hvaða stærðfræðihugtökum er stefnt, ólíkt því sem á við um (a) þar sem nemendur eiga fyrirfram að hafa öll nauðsynleg stærðfræðihugtök á valdi sínu fyrirfram. Þessi verkefni þurfa ekki endilega að vera jafn viðamikil eða tímafrek og „ferlisverkefni``.
+Til eru ótal verkefni sem miða að þessu.
+
+\section{Að kenna tiltekin líkön - áhersla (c)}\label{nam_tiltekin}
+
+Ef áherslan er á að nemendur læri \textbf{tiltekin líkön} eða gerðir af líkönum ætti verkefnið að vera „raunverulegt`` fyrir nemendum en samt \emph{ekki endilega hluti af þeirra hversdagslega raunveruleika}. Upplýsingar eru yfirleitt gefnar og einfaldaðar og ef til vill þægilegar tölur valdar. Það er búið að ákveða forsendur og hvaða upplýsingar á að nota. Stundum er ætlast til þess að nemendur átti sig sjálfir á stærðfræðilegum tengslum og aðferðum, en stundum eru þessir hlutir einfaldlega kynntir nemendum fyrirfram. Þeirra hlutverk er þá að nota hugtök og aðferðir sem búið er að útskýra. Líkönin sem hér um ræðir eru þá yfirleitt „háþróuð`` og þess vegna ekki raunhæft að nemendur smíði þau sjálfir. En þau eru misflókin og misjafnt hve mikinn tíma nemendur þurfa til að ná tökum á þeim -- stundum er í raun margra ára nám að gera það vel.
+
+Ýmis dæmi eru algeng í skólanámsefni um líkön af þessu tagi. Að vísu mætti oft hugsa sér að kenna þau meira í anda (b) en nokkur dæmi eru: að búa til línulegt líkan, þ.e. beita jöfnu beinnar línu \(y=ax+b\) til að svara spurningum um aðstæður sem eru nokkuð augljóslega af því tagi að þeim má svara með slíku líkani.
+
+Hvort sem nemendur læra um stærðfræðilíkön gegnum enduruppgötvun eða beinni kennslu, þá eru markmiðin að nemendur skilji betur hlutverk stærðfræðinnar í heiminum og séu hæfari til að taka vel ígrundaðar og undirbyggðar ákvarðanir og afstöðu eins og nauðsynlegt er fyrir virka, hugsandi og gagnrýna borgara.
+
+\section{Líkön, RME og PISA}\label{rme_PISA}
+
+Ein nálgun á því að kenna/læra stærðfræði mætti nefna „líkön sem leið til stærðfræðináms``. Þær hugmyndir sem ræddar eru hér eru meðal annars byggðar á vinnu og rannsóknum hollenskra fræðimanna sem kalla nálgun sína „Realistic mathematics education`` (RME). Grunnhugmyndin er að nemendur læri stærðfræði með því að enduruppgötva hana með stuðningi. Vinnu nemenda má greina í tvo fasa (sem oft blandast saman):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Lárétt stærðfræði} (e. horizontal mathematization): að finna leiðir til að setja fram aðstæður sem eru nemendum raunverulegar og skiljanlegar (þessar leiðir eru nauðsynlega stærðfræðilegar, vegna eðlis viðfangsefna og spurninga).
+\item
+  \textbf{Lóðrétt stærðfræði} (e. vertical mathematization): að þróa stærðfræðina sem verður til, stærðfræðilega. Fókusinn færist hér frá tengslum „raunveruleikans`` við stærðfræði, yfir á stærðfræðina sjálfa.
+\end{enumerate}
+
+Hugsunin er að nemendur sjálfir fáist bæði við að finna upp leiðir til þess að \emph{setja fram} og \emph{skrásetja} (þarna verða stærðfræðihugtök til) og svo við að finna út nauðsynlegar afleiðingar af framsetningum sínum og eiginleika þeirra. Hlutverk kennara er meðal annars að viðhalda hugsun nemenda, fá þá til þess að tjá hugmyndir sínar, setja sig inn í hugmyndir hinna, og ekki síður að benda á veikleika, spyrja krefjandi spurninga og samræma við viðtekin hugtök og framsetningar eins og þau eru í skólabókunum. Nokkrir punktar til að hafa í huga:
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  Upphaflegu verkefnin (í láréttu stærðfræðinni) eiga að vera á tungumáli sem nemendur skilja og kennarar verða að ganga úr skugga um að allir nemendur skilji þau. Þau eiga ekki að innihalda tæknileg hugtök eða orðalag sem nemendur skilja ekki. Ef um eitthvað slíkt er að ræða verður kennari að gera verkefnið \emph{skiljanlegt} -- en alls ekki að gera verkefnið \emph{einfaldara}. Verkefnin geta (og þurfa oft) innihaldið stærðfræðihugtök sem nemendur skilja.
+\item
+  Kennari á ekki að sitja á hliðarlínunni heldur verður hann að vera virkur í því að draga fram hugsun nemenda og spyrja nemendur spurninga sem reyna á þá. Hann þarf líka að draga saman og tengja hugmyndir sem eru að verða til við aðrar og fyrri hugmyndir og fá nemendur til þess að vera nákvæmir. Einnig þarf hann á endanum að taka saman og setja hlutina fram eins og hefðin segir til um, kynna tæknileg heiti á hugtökum og svo framvegis.
+\end{enumerate}
+
+RME-nálgunin hefur haft mikil áhrif á það hvernig PISA lítur á stærðfræði. PISA-verkefnin eru hugsuð út frá verkefnum í anda RME. Lárétta stærðfræðin samsvarar vel líkanagerð, sérstaklega því sem við kölluðum \emph{setja fram}, \emph{túlka} og \emph{meta}. Lóðrétta stærðfræðin samsvarar ekki endilega „beitingu`` því lóðrétta stærðfræðin leggur meiri áherslu á rökhugsun og sköpun, á meðan beiting getur falist í beinum reikningi.
+
+\chapter{Mengi}\label{mengi}
+
+\chapter{Nýr kafli}\label{kafli4}
+
+\chapter{Enn kafli}\label{kafli5}
+
+\chapter{Næsti kafli}\label{kafli6}
+
+\chapter{Enn annar kafli}\label{kafli7}
+
+\chapter{Bara til að prófa alls konar}\label{bla}
+
+\section{Jöfnur}\label{juxf6fnur}
+
+\begin{equation} 
+  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
+  \label{eq:binom}
+\end{equation}
+
+Vísun \texttt{\textbackslash{}@ref(eq:binom)}, sjá jöfnu \eqref{eq:binom}.
+
+\section{Theorems and proofs}\label{theorems-and-proofs}
+
+Labeled theorems can be referenced in text using \texttt{\textbackslash{}@ref(thm:tri)}, for example, check out this smart theorem \ref{thm:tri}.
+
+\begin{theorem}
+\protect\hypertarget{thm:tri}{}\label{thm:tri}For a right triangle, if \(c\) denotes the \emph{length} of the hypotenuse
+and \(a\) and \(b\) denote the lengths of the \textbf{other} two sides, we have
+\[a^2 + b^2 = c^2\]
+\end{theorem}
+
+Read more here \url{https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html}.
+
+\section{Callout blocks}\label{callout-blocks}
+
+The R Markdown Cookbook provides more help on how to use custom blocks to design your own callouts: \url{https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html}
+
+Tilraun með að sýna og keyra R kóða
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{100}\NormalTok{, }\AttributeTok{mean =} \DecValTok{10}\NormalTok{, }\AttributeTok{sd =} \DecValTok{2}\NormalTok{)}
+\FunctionTok{mean}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10.18081
+\end{verbatim}
+
+Svo er tilraun með að greypa p5.js síðu annars staðar frá.
+
+og
+
+Og hvernig ég felli inn mynd:
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{images/kb_euler} 
+
+}
+
+\caption{Þetta er mynd.}\label{fig:unnamed-chunk-3}
+\end{figure}
+
+Aukinheldur langar mig að gera töflu.
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-4}Veður fyrir og eftir hádegi}
+\centering
+\begin{tabular}[t]{l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l}
+\hline
+Tími & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18\\
+\hline
+Fyrir & S & R & S & R & S & R & S & R & S & S & R & R & R & R & S & R & R & R\\
+\hline
+Eftir & R & S & S & S & S & R & S & S & R & S & S & S & S & R & S & R & R & S\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Footnotes}\label{footnotes}
+
+Footnotes are put inside the square brackets after a caret \texttt{\^{}{[}{]}}. Like this one \footnote{This is a footnote.}.
+
+\section{Citations}\label{citations}
+
+Reference items in your bibliography file(s) using \texttt{@key}.
+
+For example, we are using the \textbf{bookdown} package \citep{R-bookdown} (check out the last code chunk in index.Rmd to see how this citation key was added) in this sample book, which was built on top of R Markdown and \textbf{knitr} \citep{xie2015} (this citation was added manually in an external file book.bib).
+Note that the \texttt{.bib} files need to be listed in the index.Rmd with the YAML \texttt{bibliography} key.
+
+The RStudio Visual Markdown Editor can also make it easier to insert citations: \url{https://rstudio.github.io/visual-markdown-editing/\#/citations}
+
+\section{bleh}\label{bleh}
+
+You can add parts to organize one or more book chapters together. Parts can be inserted at the top of an .Rmd file, before the first-level chapter heading in that same file.
+
+Add a numbered part: \texttt{\#\ (PART)\ Act\ one\ \{-\}} (followed by \texttt{\#\ A\ chapter})
+
+Add an unnumbered part: \texttt{\#\ (PART\textbackslash{}*)\ Act\ one\ \{-\}} (followed by \texttt{\#\ A\ chapter})
+
+Add an appendix as a special kind of un-numbered part: \texttt{\#\ (APPENDIX)\ Other\ stuff\ \{-\}} (followed by \texttt{\#\ A\ chapter}). Chapters in an appendix are prepended with letters instead of numbers.
+
+Cross-references make it easier for your readers to find and link to elements in your book.
+
+\section{Chapters and sub-chapters}\label{chapters-and-sub-chapters}
+
+There are two steps to cross-reference any heading:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Label the heading: \texttt{\#\ Hello\ world\ \{\#nice-label\}}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Leave the label off if you like the automated heading generated based on your heading title: for example, \texttt{\#\ Hello\ world} = \texttt{\#\ Hello\ world\ \{\#hello-world\}}.
+  \item
+    To label an un-numbered heading, use: \texttt{\#\ Hello\ world\ \{-\#nice-label\}} or \texttt{\{\#\ Hello\ world\ .unnumbered\}}.
+  \end{itemize}
+\item
+  Next, reference the labeled heading anywhere in the text using \texttt{\textbackslash{}@ref(nice-label)}; for example, please see Kafla \ref{mengi}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    If you prefer text as the link instead of a numbered reference use: \hyperref[mengi]{any text you want can go here}.
+  \end{itemize}
+\end{enumerate}
+
+\section{Captioned figures and tables}\label{captioned-figures-and-tables}
+
+Figures and tables \emph{with captions} can also be cross-referenced from elsewhere in your book using \texttt{\textbackslash{}@ref(fig:chunk-label)} and \texttt{\textbackslash{}@ref(tab:chunk-label)}, respectively.
+
+See Figure \ref{fig:nice-fig}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mar =} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, .}\DecValTok{1}\NormalTok{, .}\DecValTok{1}\NormalTok{))}
+\FunctionTok{plot}\NormalTok{(pressure, }\AttributeTok{type =} \StringTok{\textquotesingle{}b\textquotesingle{}}\NormalTok{, }\AttributeTok{pch =} \DecValTok{19}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth,alt={Plot with connected points showing that vapor pressure of mercury increases exponentially as temperature increases.}]{_main_files/figure-latex/nice-fig-1} 
+
+}
+
+\caption{Here is a nice figure!}\label{fig:nice-fig}
+\end{figure}
+
+Don't miss Table \ref{tab:nice-tab}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(}
+  \FunctionTok{head}\NormalTok{(pressure, }\DecValTok{10}\NormalTok{), }\AttributeTok{caption =} \StringTok{\textquotesingle{}Here is a nice table!\textquotesingle{}}\NormalTok{,}
+  \AttributeTok{booktabs =} \ConstantTok{TRUE}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}
+
+\caption{\label{tab:nice-tab}Here is a nice table!}
+\centering
+\begin{tabular}[t]{rr}
+\toprule
+temperature & pressure\\
+\midrule
+0 & 0.0002\\
+20 & 0.0012\\
+40 & 0.0060\\
+60 & 0.0300\\
+80 & 0.0900\\
+\addlinespace
+100 & 0.2700\\
+120 & 0.7500\\
+140 & 1.8500\\
+160 & 4.2000\\
+180 & 8.8000\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Prófum einnig beint af GGB:
+
+\section{Publishing}\label{publishing}
+
+HTML books can be published online, see: \url{https://bookdown.org/yihui/bookdown/publishing.html}
+
+\section{404 pages}\label{pages}
+
+By default, users will be directed to a 404 page if they try to access a webpage that cannot be found. If you'd like to customize your 404 page instead of using the default, you may add either a \texttt{\_404.Rmd} or \texttt{\_404.md} file to your project root and use code and/or Markdown syntax.
+
+\section{Metadata for sharing}\label{metadata-for-sharing}
+
+Bookdown HTML books will provide HTML metadata for social sharing on platforms like Twitter, Facebook, and LinkedIn, using information you provide in the \texttt{index.Rmd} YAML. To setup, set the \texttt{url} for your book and the path to your \texttt{cover-image} file. Your book's \texttt{title} and \texttt{description} are also used.
+
+This \texttt{gitbook} uses the same social sharing data across all chapters in your book- all links shared will look the same.
+
+Specify your book's source repository on GitHub using the \texttt{edit} key under the configuration options in the \texttt{\_output.yml} file, which allows users to suggest an edit by linking to a chapter's source file.
+
+Read more about the features of this output format here:
+
+\url{https://pkgs.rstudio.com/bookdown/reference/gitbook.html}
+
+Or use:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{?bookdown}\SpecialCharTok{::}\NormalTok{gitbook}
+\end{Highlighting}
+\end{Shaded}
+
+
+\bibliography{book.bib,packages.bib}
+
+\end{document}

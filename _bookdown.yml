@@ -3,3 +3,8 @@ output_dir: "docs"
 language:
   ui:
     chapter_name: "Kafli "
+    references: "Heimildir"
+  label:
+    tab: "Tafla "
+    fig: "Mynd "
+    eq: "Jafna "

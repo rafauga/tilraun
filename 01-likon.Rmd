@@ -1,0 +1,85 @@
+# Um stærðfræðilíkön {#likon}  
+
+Í þessum kafla er fjallað um stærðfræðilíkön, hlutverk þeirra í kennslu og líkanagerðarsjónarmið á stærðfræði. Litið verður á dæmi um einföld líkön og líkön í efni skólabóka.
+
+## Líkön: fyrsta skilgreining {#likan_skgr} 
+
+Stærðfræðilegt líkan eða stærðfræðilíkan er (einfölduð) framsetning á einhverjum (hluta af) raunverulegum aðstæðum eða fyrirbærum, með stærðfræðilegum hugtökum og fullyrðingum. Líkanið inniheldur nauðsynlega (og af ásetningi) einungis upplýsingar um tilteknar hliðar á viðfangsefninu en ekki aðrar. Það fer eftir því hvert samhengið er hvað skiptir máli og hvað skiptir ekki máli (fyrir markmiðin í hvert skipti). 
+Við notum stærðfræðilíkön til þess að **lýsa**, **útskýra** og **spá** fyrir um aðstæður, ferli og fyrirbæri. Auk þess eru stærðfræðilíkön í auknum mæli notuð til þess að stjórna eða móta veruleika okkar (til dæmis því hvað við sjáum á samfélagsmiðlum, borgum í skatta, og fleira og fleira). 
+
+PISA-stofnunin leggur mikla áherslu á stærðfræðilíkön í sinni skilgreiningu á stærðfræðilæsi. Það má líta á stærðfræðilæsi sem hæfni í að búa til, vinna með og túlka stærðfræðilíkön. Hér er skýringarmynd úr íslenskri skýrslu um PISA frá 2015 (kafli eftir Freyju Hreinsdóttur). 
+
+```{r, echo=FALSE, fig.cap="Líkanahringurinn", out.width="70%", fig.align="center"}
+knitr::include_graphics("images/PISA_model.png")
+```
+
+Takið eftir því að stærðfræðilíkanið sjálft er smíðað í fasanum **setja fram**. Því er svo beitt og hlutir reiknaðir út í fasanum beita. Þá er stærðfræðilega lausnin skoðuð og túlkuð yfir á upphaflega verkefnið: hvað segir stærðfræðilausnin um raunveruleikann? Að lokum þá er lagt mat á lausnina, og út frá því er stærðfræðilíkanið oft endurskoðað, og annar hringur hefst.
+
+Stærðfræðilíkanið er stundum safn af skrifuðum jöfnum, stundum teikningar af venslum hluta, stundum reiknirit í formi tölvuforrits, eða fleira en eitt af þessu eða á einhverju öðru formi af framsetningu á stærðfræðihugtökum.
+
+### Samtala {#samtala} 
+Hugsum okkur að stjórnmálamaður segi eftirfarandi:
+
+<div style="margin-left: 3em;">
+Fjöldi atvinnulausra er 12000, en fjöldi fólks undir fátæktarmörkum er 7000. Samtals eru þetta 19000 manns.
+</div>
+
+(a) Er þetta örugglega satt? Ef þetta er ekki nauðsynlega satt -- hvað gæti verið satt í staðinn?
+(a) Greinið lausn ykkar út frá líkaninu *Setja fram-Beita-Túlka-Meta*. Hvað gerið þið í hverjum fasa?
+(a) Útskýrið um hvað þetta verkefni er, burt séð frá raunverulega samhenginu. Er hægt að segja almennt um hvers konar „raunverulegar aðstæður“ er að ræða, og hvernig framsetningar varpa ljósi á þær? Hér má nota öll þau stærðfræðihugtök og rithátt sem þið þekkið. 
+
+### Hópar {#hopar}
+Hugsum okkur tvö einkenni. Til að hafa eitthvað til að hugsa um skulum við taka þessi tvö einkenni fólks: 
+
+1. Að vera dökkhært
+1. Að vera með brún augu 
+
+Í því sem eftir af dæminu beinum við athygli okkar ekki að fjölda í hverjum hópi eða stærðum hópa, eingöngu það að segja hvaða hópar koma til greina. Hafið líka í huga að hér höfum við engan sérstakan áhuga á þessum tilteknu eiginleikum. Líkanið er ekki um neinn tiltekinn áþreifanlegan raunveruleika. Þið megið búa til hvaða tvö einkenni sem er, til að hugsa um, svo lengi sem sama manneskjan gæti mögulega haft bæði einkennin í einu, eða annað hvort, eða hvorugt. Hér er spurningin: hvaða ólíku afmörkuðu hópa er hægt að aðgreina á grundvelli þessara tveggja einkenna? Næsta spurning er: hvaða ólíku afmarkaða hópa væri hægt að aðgreina út frá þremur einkennum (er hægt að sýna hópana einhvern veginn?) og hve margir eru þeir? Hvað með fjögur, fimm eða sex einkenni, og svo framvegis?
+
+## Ólík markmið og áherslur í kennslu {#olikmarkmid}
+Í [aðalnámskrá grunnskóla](https://adalnamskra.is/adalnamskra-grunnskola/kafli-25) segir í kaflanum *Að geta spurt og svarað með stærðfræði* að við lok 10. bekkjar geti nemandi „sett upp, túlkað og gagnrýnt stærðfræðilegt líkan af raunverulegum aðstæðum. Það getur m.a. falið í sér reikning, teikningar, myndrit, jöfnur og föll.“ Þessu markmiði má svo skipta í tvennt: annars vegar að geta smíðað stærðfræðilíkan frá grunni, og hins vegar að geta notað tilteknar þekktar gerðir af stærðfræðilíkönum.
+Hægt er að greina að minnsta kosti þrenns konar áherslu í kennslu: 
+
+(a) Að kenna nemendum að smíða stærðfræðilíkön frá grunni (áhersla á ferlið).
+(a) Að nota smíði stærðfræðilíkana til þess að kenna/læra stærðfræði (áhersla á stærðfræðihugtök).
+(a) Að kenna nemendum að nota tiltekin stærðfræðilíkön (áhersla á að nota þekkta stærðfræði) og/eða túlka þau.
+
+Hugmyndin með (a) er þá yfirleitt að raunverulegt samhengi skipti meginmáli, að það sé „raunverulega raunverulegt“ og tekið alvarlega, en þá er gert ráð fyrir að stærðfræðilega inntakið sem ætlast er til að nemendur noti sé þeim mjög vel tamt (og þeir hafi þekkt það í langan tíma, til dæmis 2 ár). Hugmyndin í (b) er að stærðfræðin hafi forgang en það skipti ekki öllu máli að verkefnið sé algerlega raunverulegt, það skipti ekki öllu máli að taka allar flækjur sem fylgja raunveruleikanum inn í myndina. Tilgangurinn sé að byggja upp þekkingu og skilning á stærðfræði. Með (c) er kannski farið næst því sem hefðbundið er: nemendum er kennt að nota tilteknar vel skilgreindar gerðir af stærðfræðilíkönum sem þeir æfa sig að nota. Að sjálfsögðu er ekki útilokað að samþætta markmiðið og fara einhverskonar millileið.
+
+**Spurningar**
+
+(a) Ef við lítum til baka á verkefnið [Samtala](#samtala): Væri hægt að nota það til að ná markmiðum a, b, og/ eða c? Hér er mikilvægt að velta fyrir sér hvaða stærðfræðihugtök væri um að ræða og fyrir hvaða nemendahópur (hvað veit hann fyrirfram?). 
+(a) Verkefnið [Hópar](#hopar) er augljóslega ekki um að smíða stærðfræðilíkan af raunverulegum aðstæðum -- markmið þess er ekki beinlínis hagnýtt fyrir nemendur í grunn- og framhaldsskólum. En hvaða gildi gæti verkefnið haft fyrir stærðfræðinám? 
+
+
+## Ferlið - áhersla (a) {#nam_ferlid}
+Ef áherslan er á að kenna nemendum **ferlið** að búa til stærðfræðilíkan er mikilvægt að verkefnið sé mjög „raunverulegt“ (fyrir nemendum). Þeir ættu sjálfir að finna út hvaða upplýsinga þarf að afla og gera það. Að sjálfsögðu má veita stuðning, til dæmis með því að beina nemendum að áreiðanlegum upplýsingaveitum, en upplýsingarnar ættu ekki að vera á tilbúnu „stærðfræðiformi“. Það er hins vegar ekki hægt að ætlast til þess að nemendur noti stærðfræðihugtök sem þeir hafa ekki náð góðum tökum á, vegna þess að verkefnið sjálft og allt ferlið er nógu flókið. Mikil áhersla er þá á að setja skýrt fram allar forsendur, reikniaðferðir, túlkun á niðurstöðum og mat á því hve nákvæmt líkanið er. Og ef unnið er á þennan hátt þarf að gefa góðan tíma. Það sem stærðfræðikennari verður að vega og meta hér er hvort tíminn sem fer í „annað en stærðfræði“ sé þess virði. 
+Vinsæl dæmi um verkefni af þessu tagi gætu verið að skipuleggja veislu, hópferðalag eða að spara fyrir einhverju, en það gerist stundum að stærðfræðin sjálf verður að nánast engu eða er allt of einföld. Ef það þarf enga stærðfræði umfram samlagningu og frádrátt á verkefnið varla heima í námsefni efri bekkja grunnskóla til dæmis. 
+
+## Stærðfræðinám gegnum líkanagerð - áhersla (b) {#nam_likanagerd}
+Ef áherslan er á að nemendur læri stærðfræðihugtök má draga úr áherslunni á að verkefnið sé áþreifanlegt og aðkallandi, og það má hugsa sér að gefa nemendum allar nauðsynlegar upplýsingar. Verkefnið þarf auðvitað að vera raunverulegt fyrir nemendum en það má sleppa því að hugsa um allar flækjur og má jafnvel hugsa sér „þrautir“ og hálf-stærðfræðileg samhengi, það er að segja, það er hægt að gefa nemendum (einfaldaðar) upplýsingar, hugsanlega að hluta á stærðfræðilegu formi sem þeim er vel tamt. Tilgangurinn hér er í raun að nemendur verði meðvitaðir um einhver stærðfræðileg tengsl sem þeir hafa ekki áður áttað sig á með því að leysa verkefnið, og þetta eru verkefnin sem henta í RME-nálgun (sjá síðar) á stærðfræði þar sem nemendur enduruppgötva stærðfræðina. Verkefnin eru hönnuð til þess að nemendur „neyðist“ til þess að átta sig á þessum tengslum. Svo kennarinn verður að vita fyrirfram að hvaða stærðfræðihugtökum er stefnt, ólíkt því sem á við um (a) þar sem nemendur eiga fyrirfram að hafa öll nauðsynleg stærðfræðihugtök á valdi sínu fyrirfram. Þessi verkefni þurfa ekki endilega að vera jafn viðamikil eða tímafrek og „ferlisverkefni“.
+Til eru ótal verkefni sem miða að þessu.  
+
+## Að kenna tiltekin líkön - áhersla (c) {#nam_tiltekin}
+Ef áherslan er á að nemendur læri **tiltekin líkön** eða gerðir af líkönum ætti verkefnið að vera „raunverulegt“ fyrir nemendum en samt *ekki endilega hluti af þeirra hversdagslega raunveruleika*. Upplýsingar eru yfirleitt gefnar og einfaldaðar og ef til vill þægilegar tölur valdar. Það er búið að ákveða forsendur og hvaða upplýsingar á að nota. Stundum er ætlast til þess að nemendur átti sig sjálfir á stærðfræðilegum tengslum og aðferðum, en stundum eru þessir hlutir einfaldlega kynntir nemendum fyrirfram. Þeirra hlutverk er þá að nota hugtök og aðferðir sem búið er að útskýra. Líkönin sem hér um ræðir eru þá yfirleitt „háþróuð“ og þess vegna ekki raunhæft að nemendur smíði þau sjálfir. En þau eru misflókin og misjafnt hve mikinn tíma nemendur þurfa til að ná tökum á þeim -- stundum er í raun margra ára nám að gera það vel. 
+
+Ýmis dæmi eru algeng í skólanámsefni um líkön af þessu tagi. Að vísu mætti oft hugsa sér að kenna þau meira í anda (b) en nokkur dæmi eru: að búa til línulegt líkan, þ.e. beita jöfnu beinnar línu $y=ax+b$ til að svara spurningum um aðstæður sem eru nokkuð augljóslega af því tagi að þeim má svara með slíku líkani.  
+
+Hvort sem nemendur læra um stærðfræðilíkön gegnum enduruppgötvun eða beinni kennslu, þá eru markmiðin að nemendur skilji betur hlutverk stærðfræðinnar í heiminum og séu hæfari til að taka vel ígrundaðar og undirbyggðar ákvarðanir og afstöðu eins og nauðsynlegt er fyrir virka, hugsandi og gagnrýna borgara. 
+
+## Líkön, RME og PISA {#rme_PISA}
+Ein nálgun á því að kenna/læra stærðfræði mætti nefna „líkön sem leið til stærðfræðináms“. Þær hugmyndir sem ræddar eru hér eru meðal annars byggðar á vinnu og rannsóknum hollenskra fræðimanna sem kalla nálgun sína „Realistic mathematics education“ (RME). Grunnhugmyndin er að nemendur læri stærðfræði með því að enduruppgötva hana með stuðningi. Vinnu nemenda má greina í tvo fasa (sem oft blandast saman): 
+
+1. **Lárétt stærðfræði** (e. horizontal mathematization): að finna leiðir til að setja fram aðstæður sem eru nemendum raunverulegar og skiljanlegar (þessar leiðir eru nauðsynlega stærðfræðilegar, vegna eðlis viðfangsefna og spurninga).
+1. **Lóðrétt stærðfræði** (e. vertical mathematization): að þróa stærðfræðina sem verður til, stærðfræðilega. Fókusinn færist hér frá tengslum „raunveruleikans“ við stærðfræði, yfir á stærðfræðina sjálfa. 
+
+Hugsunin er að nemendur sjálfir fáist bæði við að finna upp leiðir til þess að *setja fram* og *skrásetja* (þarna verða stærðfræðihugtök til) og svo við að finna út nauðsynlegar afleiðingar af framsetningum sínum og eiginleika þeirra. Hlutverk kennara er meðal annars að viðhalda hugsun nemenda, fá þá til þess að tjá hugmyndir sínar, setja sig inn í hugmyndir hinna, og ekki síður að benda á veikleika, spyrja krefjandi spurninga og samræma við viðtekin hugtök og framsetningar eins og þau eru í skólabókunum. Nokkrir punktar til að hafa í huga:
+
+(a) Upphaflegu verkefnin (í láréttu stærðfræðinni) eiga að vera á tungumáli sem nemendur skilja og kennarar verða að ganga úr skugga um að allir nemendur skilji þau. Þau eiga ekki að innihalda tæknileg hugtök eða orðalag sem nemendur skilja ekki. Ef um eitthvað slíkt er að ræða verður kennari að gera verkefnið *skiljanlegt* -- en alls ekki að gera verkefnið *einfaldara*. Verkefnin geta (og þurfa oft) innihaldið stærðfræðihugtök sem nemendur skilja. 
+(a) Kennari á ekki að sitja á hliðarlínunni heldur verður hann að vera virkur í því að draga fram hugsun nemenda og spyrja nemendur spurninga sem reyna á þá. Hann þarf líka að draga saman og tengja hugmyndir sem eru að verða til við aðrar og fyrri hugmyndir og fá nemendur til þess að vera nákvæmir. Einnig þarf hann á endanum að taka saman og setja hlutina fram eins og hefðin segir til um, kynna tæknileg heiti á hugtökum og svo framvegis.
+
+RME-nálgunin hefur haft mikil áhrif á það hvernig PISA lítur á stærðfræði. PISA-verkefnin eru hugsuð út frá verkefnum í anda RME. Lárétta stærðfræðin samsvarar vel líkanagerð, sérstaklega því sem við kölluðum *setja fram*, *túlka* og *meta*. Lóðrétta stærðfræðin samsvarar ekki endilega „beitingu“ því lóðrétta stærðfræðin leggur meiri áherslu á rökhugsun og sköpun, á meðan beiting getur falist í beinum reikningi. 
+
+
+
+
